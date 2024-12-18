@@ -655,12 +655,6 @@ void UserInfoPopup::installEvents()
                 this->ui_.block->setEnabled(false);
 
                 bool wasPinned = this->ensurePinned();
-                auto btn = QMessageBox::warning(
-                    this, u"Blocking " % this->userName_,
-                    u"Blocking %1 can cause unintended side-effects like unfollowing.\n\n"_s
-                    "Are you sure you want to block %1?".arg(this->userName_),
-                    QMessageBox::Yes | QMessageBox::Cancel,
-                    QMessageBox::Cancel);
                 if (wasPinned)
                 {
                     this->togglePinned();
